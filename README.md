@@ -2,7 +2,7 @@
 ### Requirements:
 #### App Deployment: 
 - Container Image: gcr.io/google-samples/hello-app:2.0
-- Exposed Service
+- Exposed Service and ignore during uninstall
 - Deployment:
     - configurable replica
     - env variables
@@ -15,8 +15,7 @@
 ### Tasks:
 - [x] Create Base-Chart
 - [x] Create ssh priv/pub key
-- [ ] Adjust Deployment Template with params
-- [ ] Adjust Service Template
-- [ ] Add Dependencies
-- [ ] Add Pod deployment
-- [ ] Docs
+- [x] Adjust Deployment Template with params
+- [x] Adjust Service Template
+- [x] Add Dependencies
+- [x] Readme

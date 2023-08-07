@@ -18,3 +18,9 @@ deployment:
     repository: gcr.io/google-samples/hello-app
     pullPolicy: IfNotPresent
     tag: "2.0"
+  env:
+    GREETING: "Hello world"
+  volume:
+    enabled: false
+    mountPath: "/usr/share"
+    name: hello-app-pv-storage

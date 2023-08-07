@@ -21,3 +21,15 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
+          {{- if .Values.deployment.env }}
+          env:
+          {{- range $key, $val := .Values.deployment.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.deployment.volume.enabled }}
+          volumeMounts:
+            - mountPath: {{ .Values.deployment.volume.mountPath }}
+              name: {{ .Values.deployment.volume.name }}
+          {{- end }}
