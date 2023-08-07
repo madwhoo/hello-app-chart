@@ -1,0 +1,20 @@
+# ConfigMap
+configmap:
+  data:
+    ssh-publickey: |
+      ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAE69VrZ8ESO/4cN7UwCbjJ88U1Gj4AfJRkv3E0zKhcaL2HTagV1lehL0BNzm+dbH1s9cqVDiZHFh4lFWhot1vIUEAEooosI/mOnuHDIclU9TEw4uPX6m6dPw7hmuwmj3l9tPhjlVO6iLKOdG8mHLmq4iGH24xzakCqMLo82rRGL7rn/AQ== mad@madwhoo
+
+# Service
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080
+  nodePort: 30163
+
+# Deployment
+deployment:
+  replicaCount: 1
+  image:
+    repository: gcr.io/google-samples/hello-app
+    pullPolicy: IfNotPresent
+    tag: "2.0"
